@@ -12,13 +12,13 @@ public class HelloController {
 //	파라미터로 name을 받는다.
 //	ex: /hello?name=홍길동
 	@RequestMapping("/hello")
-	public ModelAndView hello(@RequestParam String name) {
+	public ModelAndView hello() {
 //		Spring의 기본 응답 객체는 ModelAndView
 //		데이터(Model)와 뷰 객체의 정보를 함께 가지고 있다.
 		ModelAndView mav = new ModelAndView();
 		
 //		데이터를 설정
-		mav.addObject("message", "Hello, " + name);	// Servlet에서 attribute 추가와 비슷
+//		mav.addObject("message", "Hello, " + name);	// Servlet에서 attribute 추가와 비슷
 		mav.setViewName("/WEB-INF/views/hello.jsp");
 		
 		return mav;
